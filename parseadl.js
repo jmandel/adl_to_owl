@@ -182,9 +182,10 @@ var Ontology = function(filename) {
 	};
 
 	this.processArchetype = function(f) {
-		var a = fs.readFileSync(f);
-		var a = JSON.parse(a);
-		console.log("PARSED ", a);
+		var a = fs.readFileSync(f, 'utf8');
+		a = a.replace(/^\uFEFF/, ''); 
+		a = JSON.parse(a);
+		console.log("PARSED archetype");
 		var prefix = a.archetype_id.split('.').slice(-2).join('.');
 		owlPrefix(prefix, 'http://cimi/archetypes/'+a.archetype_id+'#');
 		
