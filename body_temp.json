@@ -1,0 +1,989 @@
+{
+	"original_language": "ISO_639-1::en",
+	"translations": [{
+		"de": {
+			"language": "ISO_639-1::de",
+			"author": [{
+				"name": "Sebastian Garde",
+				"organisation": "Ocean Informatics"
+			}]
+		},
+		"pt-br": {
+			"language": "ISO_639-1::pt-br",
+			"author": [{
+				"name": "Marco Borges",
+				"organisation": "P2D",
+				"email": "marco.borges@p2d.com.br"
+			}],
+			"accreditation": "P2D Health Advisor Council"
+		},
+		"ru": {
+			"language": "ISO_639-1::ru",
+			"author": [{
+				"name": "Igor Lizunov",
+				"email": "i.lizunov@infinnity.ru"
+			}]
+		}
+	}],
+	"description": {
+		"original_author": [{
+			"name": "Sam Heard",
+			"organisation": "Ocean Informatics",
+			"email": "sam.heard@oceaninformatics.com",
+			"date": "18/05/2004"
+		}],
+		"details": [{
+			"en": {
+				"language": "ISO_639-1::en",
+				"purpose": "To record the measured temperature of a person - as a surrogate for the temperature of the whole body.",
+				"use": "Used for recording the whole body temperature of a person or body.\n Additional clusters can be included to provide additional state data - including environmental conditions, menstrual cycle details and exertion details, where appropriate.\nPlease Note: The site and method of recording may need to be displayed to the end user to facilitate accurate interpretation of the temperature recorded.",
+				"keywords": ["temperature", "body", "core", "fever", "hypothermia", "hyperthermia"],
+				"misuse": "This archetype is not to be used to record the temperature of any other object.\nThis archetype is not to be used to record the temperature of a part of the body in isolation e.g. temperature of the sole of the foot as a part of chronic diabetes management.",
+				"copyright": "© openEHR Foundation"
+			},
+			"de": {
+				"language": "ISO_639-1::de",
+				"purpose": "Zur Messung der Temperatur einer Person - als Surrogat for die Temperatur des gesamten Körpers.",
+				"use": "Benutzt zur Aufzeichnung der gesamten Körpertemperatur einer Person oder eines Körpers. Bitte beachten: Die Stelle und Methode der Messung muss ggf. dem Endverbraucher angezeigt werden, um eine präzise Interpretation der gemessenen Temperatur zu ermöglichen.",
+					"keywords": ["Temperatur", "Körper", "Kern", "Fieber", "Hypothermie", "Hyperthermie"],
+				"misuse": "Dieser Archetyp soll nicht benutzt werden, um die Messung der Temperatur irgendeines anderen Objekts zu dokumentieren. Dieser Archetyp soll nicht benutzt werden, um die Temperatur eines Körperteils isoliert zu messen, z. B. die Temperatur an der Fußsohle im Rahmen des Managements von chronischem Diabetes.",
+				"copyright": "© openEHR Foundation"
+			},
+			"pt-br": {
+				"language": "ISO_639-1::pt-br",
+				"purpose": "Para registrar a temperatura aferida de uma pessoa - com valor médio equivalente para o corpo inteiro.",
+				"use": "Usado para registrar a temperatura corporal de uma pessoa ou organismo. Clusters adicionais podem ser incluídos para fornecer dados adicionais - incluindo as condições ambientais, os detalhes do ciclo menstrual e detalhes de esforço, se for caso. Observação: O local e método de gravação podem precisar de ser exibidos ao usuário final para facilitar a interpretação exata da temperatura registrada.",
+				"keywords": ["temperatura", "corpo", "febre", "hipotermia", "hipertermia"],
+				"misuse": "Esse arquétipo não pode ser usado para registrar a temperatura de qualquer outro objeto. Esse arquétipo não pode ser usado para registrar a temperatura de uma parte do corpo isoladamente, por exemplo, temperatura da sola do pé, como parte do controle de diabetes crônica.",
+				"copyright": "© openEHR Foundation"			
+			}
+		}],
+		"lifecycle_state": "AuthorDraft",
+		"other_contributors": ["Knut Bernstein", "Sebastian Garde", "Ian McNicoll", "Omer Hotomaroglu", "Sundaresan Jaganathan", "Heather Leslie", "Shahla Foozonkhah"],
+		"other_details": [{
+			"MD5-CAM-1.0.1": "67AD0398E82C094EA41963065CD85084"
+		}]
+	},
+	"artefact_object_type": "FLAT_ARCHETYPE",
+	"archetype_id": "openEHR-EHR-OBSERVATION.body_temperature.v1",
+	"adl_version": "1.5",
+	"artefact_type": "archetype",
+	"definition": {
+		"rm_type_name": "OBSERVATION",
+		"node_id": "at0000",
+		"attributes": [
+			{
+				"rm_attribute_name": "data",
+				"children": [
+					{
+						"rm_type_name": "HISTORY",
+						"node_id": "at0002",
+						"attributes": [
+							{
+								"rm_attribute_name": "events",
+								"children": [
+									{
+										"rm_type_name": "EVENT",
+										"node_id": "at0003",
+										"occurrences": "0..*",
+										"attributes": [
+											{
+												"rm_attribute_name": "data",
+												"children": [
+													{
+														"rm_type_name": "ITEM_TREE",
+														"node_id": "at0001",
+														"attributes": [
+															{
+																"rm_attribute_name": "items",
+																"children": [
+																	{
+																		"rm_type_name": "ELEMENT",
+																		"node_id": "at0004",
+																		"attributes": [
+																			{
+																				"rm_attribute_name": "value",
+																				"children": [
+																					{
+																						"rm_type_name": 
+
+"DV_QUANTITY",
+																						"property": 
+
+"openehr::127",
+																						"list": [
+																							{
+																								
+
+"units": "°C",
+																								
+
+"precision": {
+																								
+
+	"lower": 1,
+																								
+
+	"upper": 1
+																								
+
+}
+																							},
+																							{
+																								
+
+"units": "°F",
+																								
+
+"precision": {
+																								
+
+	"lower": 1,
+																								
+
+	"upper": 1
+																								
+
+}
+																							}
+																						]
+																					}
+																				],
+																				"is_multiple": false
+																			}
+																		]
+																	}
+																],
+																"cardinality": "1; unordered",
+																"is_multiple": true
+															}
+														]
+													}
+												],
+												"is_multiple": false
+											},
+											{
+												"rm_attribute_name": "state",
+												"children": [
+													{
+														"rm_type_name": "ITEM_TREE",
+														"node_id": "at0029",
+														"attributes": [
+															{
+																"rm_attribute_name": "items",
+																"children": [
+																	{
+																		"rm_type_name": "ELEMENT",
+																		"node_id": "at0030",
+																		"occurrences": "0..1",
+																		"attributes": [
+																			{
+																				"rm_attribute_name": "value",
+																				"children": [
+																					{
+																						"rm_type_name": 
+
+"DV_CODED_TEXT",
+																						"attributes": [
+																							{
+																								
+
+"rm_attribute_name": "defining_code",
+																								
+
+"children": [
+																								
+
+	{
+																								
+
+		"rm_type_name": "CODE_PHRASE",
+																								
+
+		"assumed_value": "local::at0033",
+																								
+
+		"terminology_id": "local",
+																								
+
+		"code_list": ["at0031", "at0032", "at0033", "at0034"]
+																								
+
+	}
+																								
+
+],
+																								
+
+"is_multiple": false
+																							}
+																						]
+																					}
+																				],
+																				"is_multiple": false
+																			}
+																		]
+																	},
+																	{
+																		"rm_type_name": "CLUSTER",
+																		"node_id": "at0056",
+																		"occurrences": "0..1",
+																		"includes": [
+																			{
+																				"expression": {
+																					"type": "Boolean",
+																					"operator": {
+																						"value": 2007
+																					},
+																					"left_operand": {
+																						"type": 
+
+"String",
+																						
+
+"reference_type": "attibute",
+																						"item": 
+
+"archetype_id/value"
+																					},
+																					"right_operand": {
+																						"type": 
+
+"C_STRING",
+																						
+
+"reference_type": "constraint",
+																						"item": {
+																							
+
+"regexp": "openEHR-EHR-CLUSTER\\.environmental_conditions\\.v1",
+																							
+
+"is_open": false,
+																							
+
+"regexp_default_delimiter": true
+																						}
+																					},
+																					
+
+"precedence_overridden": false
+																				}
+																			}
+																		],
+																		"is_closed": false
+																	},
+																	{
+																		"rm_type_name": "CLUSTER",
+																		"node_id": "at0057",
+																		"occurrences": "0..1",
+																		"includes": [
+																			{
+																				"expression": {
+																					"type": "Boolean",
+																					"operator": {
+																						"value": 2007
+																					},
+																					"left_operand": {
+																						"type": 
+
+"String",
+																						
+
+"reference_type": "attibute",
+																						"item": 
+
+"archetype_id/value"
+																					},
+																					"right_operand": {
+																						"type": 
+
+"C_STRING",
+																						
+
+"reference_type": "constraint",
+																						"item": {
+																							
+
+"regexp": "openEHR-EHR-CLUSTER\\.level_of_exertion\\.v1",
+																							
+
+"is_open": false,
+																							
+
+"regexp_default_delimiter": true
+																						}
+																					},
+																					
+
+"precedence_overridden": false
+																				}
+																			}
+																		],
+																		"is_closed": false
+																	},
+																	{
+																		"rm_type_name": "ELEMENT",
+																		"node_id": "at0058",
+																		"occurrences": "0..1",
+																		"includes": [
+																			{
+																				"expression": {
+																					"type": "Boolean",
+																					"operator": {
+																						"value": 2007
+																					},
+																					"left_operand": {
+																						"type": 
+
+"String",
+																						
+
+"reference_type": "attibute",
+																						"item": 
+
+"archetype_id/value"
+																					},
+																					"right_operand": {
+																						"type": 
+
+"C_STRING",
+																						
+
+"reference_type": "constraint",
+																						"item": {
+																							
+
+"regexp": "openEHR-EHR-ELEMENT\\.last_normal_menstrual_period\\.v1|openEHR-EHR-ELEMENT\\.menstrual_cycle_day\\.v1",
+																							
+
+"is_open": false,
+																							
+
+"regexp_default_delimiter": true
+																						}
+																					},
+																					
+
+"precedence_overridden": false
+																				}
+																			}
+																		],
+																		"is_closed": false
+																	},
+																	{
+																		"rm_type_name": "ELEMENT",
+																		"node_id": "at0041",
+																		"occurrences": "0..1",
+																		"attributes": [
+																			{
+																				"rm_attribute_name": "value",
+																				"children": [
+																					{
+																						"rm_type_name": 
+
+"DV_TEXT"
+																					}
+																				],
+																				"is_multiple": false
+																			}
+																		]
+																	}
+																],
+														
+		"is_multiple": true
+															}
+														]
+													}
+												],
+												"is_multiple": false
+											}
+										]
+									}
+								],
+								"cardinality": "1..*; unordered",
+								"is_multiple": true
+							}
+						]
+					}
+				],
+				"is_multiple": false
+			},
+			{
+				"rm_attribute_name": "protocol",
+				"children": [
+					{
+						"rm_type_name": "ITEM_TREE",
+						"node_id": "at0020",
+						"attributes": [
+							{
+								"rm_attribute_name": "items",
+								"children": [
+									{
+										"rm_type_name": "ELEMENT",
+										"node_id": "at0021",
+										"occurrences": "0..1",
+										"attributes": [
+											{
+												"rm_attribute_name": "value",
+												"children": [
+													{
+														"rm_type_name": "DV_CODED_TEXT",
+														"attributes": [
+															{
+																"rm_attribute_name": "defining_code",
+																"children": [
+																	{
+																		"rm_type_name": "CODE_PHRASE",
+																		"terminology_id": "local",
+																		"code_list": ["at0022", "at0023", "at0024", 
+
+"at0025", "at0026", "at0027", "at0028", "at0043", "at0051", "at0054", "at0055"]
+																	}
+																],
+																"is_multiple": false
+															}
+														]
+													}
+												],
+												"is_multiple": false
+											}
+										]
+									},
+									{
+										"rm_type_name": "CLUSTER",
+										"node_id": "at0059",
+										"occurrences": "0..1",
+										"includes": [
+											{
+												"expression": {
+													"type": "Boolean",
+													"operator": {
+														"value": 2007
+													},
+													"left_operand": {
+														"type": "String",
+														"reference_type": "attibute",
+														"item": "archetype_id/value"
+													},
+													"right_operand": {
+														"type": "C_STRING",
+														"reference_type": "constraint",
+														"item": {
+															"regexp": "openEHR-EHR-CLUSTER\\.device\\.v1",
+															"is_open": false,
+															"regexp_default_delimiter": true
+														}
+													},
+													"precedence_overridden": false
+												}
+											}
+										],
+										"is_closed": false
+									}
+								],
+								"is_multiple": true
+							}
+						]
+					}
+				],
+				"is_multiple": false
+			}
+		]
+	},
+	"ontology": {
+		"terminologies_available": ["LNC205"],
+		"term_definitions": [{
+			"en": {
+				"items": [{
+					"at0000": {
+						"text": "Body temperature",
+						"description": "A measurement of the body temperature, which is a surrogate for the whole body temperature of the person."
+					},
+					"at0001": {
+						"text": "Single",
+						"description": "*"
+					},
+					"at0002": {
+						"text": "History",
+						"description": "@ internal @"
+					},
+					"at0003": {
+						"text": "Any event",
+						"description": "Any event"
+					},
+					"at0004": {
+						"text": "Temperature",
+						"description": "The measured body temperature (as a surrogate for the whole body)."
+					},
+					"at0020": {
+						"text": "Protocol",
+						"description": "@ internal @"
+					},
+					"at0021": {
+						"text": "Site of measurement",
+						"description": "The anatomical site of measurement of the temperature."
+					},
+					"at0022": {
+						"text": "Mouth",
+						"description": "Temperature is measured within the mouth."
+					},
+					"at0023": {
+						"text": "Ear canal",
+						"description": "Temperature is measured from within the external auditory canal."
+					},
+					"at0024": {
+						"text": "Axilla",
+						"description": "Temperature is measured from the skin of the axilla with the arm positioned down by the side."
+					},
+					"at0025": {
+						"text": "Rectum",
+						"description": "Temperature measured within the rectum."
+					},
+					"at0026": {
+						"text": "Nasopharynx",
+						"description": "Temperature is measured within the nasopharynx."
+					},
+					"at0027": {
+						"text": "Urinary bladder",
+						"description": "Temperature is measured in the urinary bladder."
+					},
+					"at0028": {
+						"text": "Intravascular",
+						"description": "Temperature is measured within the vascular system."
+					},
+					"at0029": {
+						"text": "State",
+						"description": "State information about the patient."
+					},
+					"at0030": {
+						"text": "Body exposure",
+						"description": "The thermal situation of the person who is having the temperature taken."
+					},
+					"at0031": {
+						"text": "Naked",
+						"description": "No clothing, bedding or covering."
+					},
+					"at0032": {
+						"text": "Reduced clothing/bedding",
+						"description": "The person is covered by a lesser amount of clothing or bedding than deemed appropriate for the environmental circumstances."
+					},
+					"at0033": {
+						"text": "Appropriate clothing/bedding",
+						"description": "The person is covered by an amount of clothing or bedding deemed appropriate for the environmental circumstances."
+					},
+					"at0034": {
+						"text": "Increased clothing/bedding",
+						"description": "The person is covered by an increased amount of clothing or bedding than deemed appropriate for the environmental circumstances."
+					},
+					"at0041": {
+						"text": "Description of thermal stress",
+						"description": "Description of the conditions applied to the subject that might influence their measured body temperature."
+					},
+					"at0043": {
+						"text": "Skin",
+						"description": "Temperature is measured from exposed skin."
+					},
+					"at0051": {
+						"text": "Vagina",
+						"description": "Temperature is measured within the vagina."
+					},
+					"at0054": {
+						"text": "Oesophagus",
+						"description": "Temperatue is measured within the oesophagus."
+					},
+					"at0055": {
+						"text": "Inguinal skin crease",
+						"description": "Temperature is measured in the inguinal skin crease between the leg and abdominal wall."
+					},
+					"at0056": {
+						"text": "Environmental Conditions",
+						"description": "Details about the environmental conditions at the time of temperature measurement."
+					},
+					"at0057": {
+						"text": "Exertion",
+						"description": "Details about the exertion of the person at the time of temperature measurement."
+					},
+					"at0058": {
+						"text": "Menstrual Cycle",
+						"description": "Details about the menstrual cycle of a woman."
+					},
+					"at0059": {
+						"text": "Device",
+						"description": "Details about the device use to measure body temperature."
+					}
+				}]
+			},
+			"de": {
+				"items": [{
+					"at0000": {
+						"text": "Körpertemperatur",
+						"description": "Eine Messung der Körpertemperatur an einer bestimmten Stelle als Surrogat für den gesamten Körper der Person."
+					},
+					"at0001": {
+						"text": "Single",
+						"description": "*"
+					},
+					"at0002": {
+						"text": "History",
+						"description": "@ internal @"
+					},
+					"at0003": {
+						"text": "Any event",
+						"description": "Any event."
+					},
+					"at0004": {
+						"text": "Temperatur",
+						"description": "Die gemessene Körpertemperatur (als Surrogat für den gesamten Körper)."
+					},
+					"at0020": {
+						"text": "Protocol",
+						"description": "@ internal @"
+					},
+					"at0021": {
+						"text": "Messstelle",
+						"description": "Die anatomische Stelle der Temperaturmessung."
+					},
+					"at0022": {
+						"text": "Mund",
+						"description": "Messung der Temperatur im Mund."
+					},
+					"at0023": {
+						"text": "Ohrenkanal",
+						"description": "Messung der Temperatur innerhalb des äußeren Gehörgangs."
+					},
+					"at0024": {
+						"text": "Achselhöhle",
+						"description": "Messung der Temperatur an der Haut der Achselhöhle mit seitlich angelegtem Arm."
+					},
+					"at0025": {
+						"text": "Rektum",
+						"description": "Messung der Temperatur innerhalb des Rektums."
+					},
+					"at0026": {
+						"text": "Nasopharynx",
+						"description": "Messung der Temperatur innerhalb des Nasopharynxs (Nasenrachens)."
+					},
+					"at0027": {
+						"text": "Harnblase",
+						"description": "Messung der Temperatur in der Harnblase."
+					},
+					"at0028": {
+						"text": "Intravaskulär",
+						"description": "Messung der Temperatur innerhalb des vaskulären Systems."
+					},
+					"at0029": {
+						"text": "Status",
+						"description": "Statusinformationen über die Person."
+					},
+					"at0030": {
+						"text": "Körperexposition",
+						"description": "Die thermale Situation der Person, deren Temperatur gemessen wird."
+					},
+					"at0031": {
+						"text": "Nackt",
+						"description": "Keine Kleidung, Bettzeug oder andere Bedeckung."
+					},
+					"at0032": {
+						"text": "Verminderte Kleidung/Bettzeug",
+						"description": "Die Person wird bedeckt von einer geringeren Menge an Kleidung oder Bettzeug als für die Umgebungsbedingungen angemessen  erscheint."
+					},
+					"at0033": {
+						"text": "Angemessene Kleidung/Bettzeug",
+						"description": "Die Person wird bedeckt von einer Menge an Kleidung oder Bettzeug, die den Umgebungsbedingungen angemessen erscheint."
+					},
+					"at0034": {
+						"text": "Erhöhte Kleidung/Bettzeug",
+						"description": "Die Person wird bedeckt von einer größeren Menge an Kleidung oder Bettzeug als für die Umgebungsbedingungen angemessen erscheint."
+					},
+					"at0041": {
+						"text": "Beschreibung der Wärmebelastung",
+						"description": "Beschreibung von Bedingungen, denen die Person ausgesetzt ist, welche die gemessene Körpertemperatur beeinflussen könnten."
+					},
+					"at0043": {
+						"text": "Haut",
+						"description": "Messung der Temperatur an freiliegender Haut."
+					},
+					"at0051": {
+						"text": "Vagina",
+						"description": "Messung der Temperatur innerhalb der Vagina."
+					},
+					"at0054": {
+						"text": "Oesophagus",
+						"description": "Messung der Temperatur innerhalb des Oesophagus."
+					},
+					"at0055": {
+						"text": "Inguinale Hautfalte",
+						"description": "Messung der Temperatur in der inguinalen Hautfalte zwischen Bein und Abdominalwand."
+					},
+					"at0056": {
+						"text": "Umgebungsbedingungen",
+						"description": "Details über die Umgebungsbedingungen zur Zeit der Messung."
+					},
+					"at0057": {
+						"text": "Betätigung",
+						"description": "Details über die Betätigung der Person zum Zeitpunkt der Messung der Temperatur."
+					},
+					"at0058": {
+						"text": "Menstruationszyklus",
+						"description": "Details über den Menstruationszyklus einer Frau."
+					},
+					"at0059": {
+						"text": "Gerät",
+						"description": "Details über das Gerät, das zur Temperaturmessung benutzt wurde."
+					}
+				}]
+			},
+			"pt-br": {
+				"items": [{
+					"at0000": {
+						"text": "Temperatura Corporal",
+						"description": "O valor para a temperatura corporal, com valor médio equivalente para o corpo inteiro."
+					},
+					"at0001": {
+						"text": "Single",
+						"description": "*"
+					},
+					"at0002": {
+						"text": "History",
+						"description": "@ internal @"
+					},
+					"at0003": {
+						"text": "Qualquer evento",
+						"description": "Qualquer evento."
+					},
+					"at0004": {
+						"text": "Temperatura",
+						"description": "A temperatura corporal aferida (média para o corpo inteiro)."
+					},
+					"at0020": {
+						"text": "Protocol",
+						"description": "@ internal @"
+					},
+					"at0021": {
+						"text": "Local da medida",
+						"description": "O local anatômico de onde a temperatura foi aferida."
+					},
+					"at0022": {
+						"text": "Boca",
+						"description": "A temperatura é eferida no interior da boca."
+					},
+					"at0023": {
+						"text": "Canal auditivo",
+						"description": "A temperatura é aferida dentro do canal auditivo do ouvido externo (conduto auditivo)."
+					},
+					"at0024": {
+						"text": "Axilla",
+						"description": "A temperatura é aferida na pele da axila com o braço abaixado."
+					},
+					"at0025": {
+						"text": "Reto",
+						"description": "A temperatura é aferida no reto."
+					},
+					"at0026": {
+						"text": "Nasofaringe",
+						"description": "A temperatura é aferida na parte nasal da faringe."
+					},
+					"at0027": {
+						"text": "Bexiga",
+						"description": "A temperatura é aferida na bexiga."
+					},
+					"at0028": {
+						"text": "Intravascular",
+						"description": "A temperatura é aferida no sistema vascular."
+					},
+					"at0029": {
+						"text": "Estado",
+						"description": "Informações sobre o estado do paciente."
+					},
+					"at0030": {
+						"text": "Exposição do corpo",
+						"description": "A situação térmica da pessoa que tem a sua temperatura aferida."
+					},
+					"at0031": {
+						"text": "Despido",
+						"description": "Sem roupas, camisola ou capa."
+					},
+					"at0032": {
+						"text": "Vestuário reduzido/camisola",
+						"description": "A pessoa está vestida por pouca roupa ou camisola considerado o vestuário necessário para as circunstâncias ambientais."
+					},
+					"at0033": {
+						"text": "Apropriadamente vestido",
+						"description": "A pessoa está vestida apropriadamente considerado o vestuário necessário para as circunstâncias ambientais."
+					},
+					"at0034": {
+						"text": "Excessivamente vestido",
+						"description": "A pessoa está excessivamente vestida considerado o vestuário necessário para as circunstâncias ambientais."
+					},
+					"at0041": {
+						"text": "Choque térmico",
+						"description": "Descrição das condições aplicadas ao sujeito que possa influenciar a medida de sua temperatura corporal."
+					},
+					"at0043": {
+						"text": "Pele",
+						"description": "A temperatura é aferida a partir da pele exposta."
+					},
+					"at0051": {
+						"text": "Vagina",
+						"description": "A temperatura é afereida no interior da vagina."
+					},
+					"at0054": {
+						"text": "Esófago",
+						"description": "A temperatura é aferida no esófago."
+					},
+					"at0055": {
+						"text": "Região Inguinal",
+						"description": "A temperatura é aferida na dobra da pele entre a região inguinal e a região abdominal."
+					},
+					"at0056": {
+						"text": "Condições ambientais",
+						"description": "Detalhes sobre as condições ambientais no momento em que foi aferida a temperatura."
+					},
+					"at0057": {
+						"text": "Esforço",
+						"description": "Detalhes sobre esforço que a pessoa fez no momento da aferição da temperatura."
+					},
+					"at0058": {
+						"text": "Ciclo Menstrual",
+						"description": "Detalhes sobre o ciclo menstrual da mulher."
+					},
+					"at0059": {
+						"text": "Dispositivo",
+						"description": "Detalhes sobre o dispositivo utilizado para medir a temperatura corporal."
+					}
+				}]
+			},
+			"ru": {
+				"items": [{
+					"at0000": {
+						"text": "??????????? ????",
+						"description": "????????? ??????????? ????, ??????? ???????? ?????????? ??????????? ???? ???????? ? ?????."
+					},
+					"at0001": {
+						"text": "*Single(en)",
+						"description": "**(en)"
+					},
+					"at0002": {
+						"text": "*History(en)",
+						"description": "*@ internal @(en)"
+					},
+					"at0003": {
+						"text": "????? ???????",
+						"description": "????? ???????."
+					},
+					"at0004": {
+						"text": "???????????(ru)",
+						"description": "?????????? ??????????? ???? (??? ???????? ??? ????? ????)."
+					},
+					"at0020": {
+						"text": "*Protocol(en)",
+						"description": "*@ internal @(en)"
+					},
+					"at0021": {
+						"text": "????? ?????????",
+						"description": "????????????? ????? ????????? ???????????."
+					},
+					"at0022": {
+						"text": "???",
+						"description": "??????????? ?????????? ? ??????? ???????."
+					},
+					"at0023": {
+						"text": "???????? ???????? ??????",
+						"description": "??????????? ?????????? ? ???????? ???????? ???????."
+					},
+					"at0024": {
+						"text": "??????????? ???????",
+						"description": "??????????? ?????????? ? ?????? ??????? ? ??????????? ???????, ???? ??????? ???? ? ??????? ? ????????."
+					},
+					"at0025": {
+						"text": "?????? ?????",
+						"description": "??????????? ?????????? ?????? ?????? ?????."
+					},
+					"at0026": {
+						"text": "??????????",
+						"description": "??????????? ?????????? ? ??????????."
+					},
+					"at0027": {
+						"text": "??????? ??????",
+						"description": "??????????? ?????????? ?????? ???????? ??????."
+					},
+					"at0028": {
+						"text": "????????????????",
+						"description": "??????????? ?????????? ?????? ???????????? ?????."
+					},
+					"at0029": {
+						"text": "?????????",
+						"description": "?????????? ? ????????? ????????."
+					},
+					"at0030": {
+						"text": "*Body exposure(en)",
+						"description": "*The thermal situation of the person who is having the temperature taken(en)"
+					},
+					"at0031": {
+						"text": "???????",
+						"description": "??? ??????, ????? ?? ?????."
+					},
+					"at0032": {
+						"text": "?????? ??????/???????",
+						"description": "?? ???????? ??????? ?????????? ?????? / ?????????? ???????????????, ??? ????? ??????? ??????? ??????? ?????."
+					},
+					"at0033": {
+						"text": "??????????????? ??????/???????",
+						"description": "??????/?????????? ?????????????? ???????? ????????????? ???????? ??????? ?????."
+					},
+					"at0034": {
+						"text": "?????? ??????/???????",
+						"description": "?? ???????? ??????? ?????????? ?????? / ?????????? ???????????????, ??? ????? ??????? ??????? ??????? ?????."
+					},
+					"at0041": {
+						"text": "???????? ??????",
+						"description": "???????? ????????????, ??????? ????? ???????? ?? ????????? ????????? ??????????? ????."
+					},
+					"at0043": {
+						"text": "????",
+						"description": "??????????? ?????????? ?? ??????????? ????."
+					},
+					"at0051": {
+						"text": "?????????",
+						"description": "??????????? ?????????? ?????? ??????????."
+					},
+					"at0054": {
+						"text": "???????",
+						"description": "??????????? ?????????? ?????? ????????."
+					},
+					"at0055": {
+						"text": "??????? ???????",
+						"description": "??????????? ?????????? ? ??????? ??????? ???? ????? ????? ? ???????? ??????? ???????."
+					},
+					"at0056": {
+						"text": "??????? ??????? ?????",
+						"description": "????????? ?????????? ?? ???????? ??????? ????? ? ?????? ????????? ???????????."
+					},
+					"at0057": {
+						"text": "????????",
+						"description": "????????? ?????????? ? ????????? ? ?????? ????????? ???????????."
+					},
+					"at0058": {
+						"text": "????????????? ????",
+						"description": "?????????? ? ???? ?????????????? ????? ? ???????."
+					},
+					"at0059": {
+						"text": "??????????",
+						"description": "?????????? ?? ??????????, ???????????? ??? ????????? ??????????? ????."
+					}
+				}]
+			}
+		}],
+		"term_bindings": [{
+			"LNC205": {
+				"items": [{
+					"/data[at0002]/events[at0003]/data[at0001]/items[at0004]": "LNC205::8310-5"
+				}]
+			}
+		}]
+	},
+	"is_controlled": false,
+	"is_generated": true,
+	"is_valid": true
+}
